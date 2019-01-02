@@ -3,7 +3,8 @@ from collections import Counter
 from operator import itemgetter
 from datetime import datetime
 
-with open('linux.txt') as f:
+
+with open('clue.txt') as f:
     raw_logs = f.read().splitlines()
 
 log_pattern = r'(\d+)-(\d+)-(\d+) (\d+):(\d+)] (.+)+'
