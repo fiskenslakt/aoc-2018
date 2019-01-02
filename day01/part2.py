@@ -10,4 +10,4 @@ while cur_freq not in freqs:
     cur_freq += int(freq_changes[i%len(freq_changes)])
     i += 1
 
-print(cur_freq)
+print(f'Part 2: {cur_freq}')
