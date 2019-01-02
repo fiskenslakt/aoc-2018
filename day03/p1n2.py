@@ -29,4 +29,4 @@ for ID, (x,y), (w,h) in claims:
 
 inches_that_overlap = sum(1 for inch in cut_points.values() if len(inch) > 1)
 print(f'Part 1: {inches_that_overlap}')
-print(f'Part 2:', no_overlap.pop())
+print('Part 2:', no_overlap.pop())
