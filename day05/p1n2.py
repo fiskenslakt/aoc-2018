@@ -1,10 +1,6 @@
 import string
 
 
-with open('clue.txt') as f:
-    polymer = f.read().strip()
-
-
 def react(polymer, skip_letter=None):
     stack = []
 
@@ -17,14 +13,21 @@ def react(polymer, skip_letter=None):
         else:
             stack.append(unit)
 
-    return len(stack)
+    return ''.join(stack)
 
 
-print(f'Part 1: {react(polymer)}')
+with open('clue.txt') as f:
+    polymer = f.read().strip()
+
+polymer = react(polymer)
+
+print(f'Part 1: {len(polymer)}')
 
 polymer_lengths = []
 
 for letter in string.ascii_lowercase:
-    polymer_lengths.append(react(polymer, letter))
+    polymer_lengths.append(len(react(polymer, letter)))
 
-print(f'Part 2: {min(polymer_lengths)}')
+best_len = min(polymer_lengths)
+
+print(f'Part 2: {best_len}')
